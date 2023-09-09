@@ -1,18 +1,21 @@
 <template lang="pug">
-
+div.app
+  SearchForm
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchForm from './components/SearchForm.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SearchForm
   }
 }
 </script>
 
 <style>
-
+body {
+  background-color: #FFF;
+}
 </style>
