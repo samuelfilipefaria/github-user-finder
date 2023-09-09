@@ -7,12 +7,12 @@ form.search-form(@submit.prevent="searchUser")
 
 <script>
 export default {
+  name: 'SearchForm',
   data() {
     return {
       githubUsername: "",
     }
   },
-  name: 'SearchForm',
   props: {
 
   },
@@ -47,12 +47,13 @@ export default {
 
 .search-box-input {
   color: #000;
-  width: 200px;
+  width: 400px;
   padding-left: 10px;
   margin-right: 10px;
 }
 
 .search-box-button {
+  width: 30px;
   font-weight: bold;
   color: #000;
   padding-left: 10px;
