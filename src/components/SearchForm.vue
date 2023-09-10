@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       githubUsername: "",
+      isLoading: false
     }
   },
   props: {
@@ -18,7 +19,19 @@ export default {
   },
   methods: {
     searchUser() {
-      console.log(this.githubUsername);
+      this.$emit("start");
+
+      const URL = "https://api.github.com/users/";
+
+      fetch(URL + this.githubUsername, { method: "GET" }).then((response) => {
+        return response.json().then((hash) => {
+          this.$emit("userData", hash);
+        });
+      }).catch((error) => {
+        console.log("Deu erro -> " + error);
+      })
+
+      this.$emit("end");
     }
   }
 }

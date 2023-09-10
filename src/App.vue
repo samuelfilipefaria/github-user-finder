@@ -1,7 +1,8 @@
 <template lang="pug">
 div.app
-  SearchForm
-  UserCard(photo="" name="")
+  SearchForm(@userData="userData" @start="isLoading = true" @end="isLoading = false")
+  UserCard(v-if="isUserLoaded" :photo="user.avatar_url" :name="user.name")
+  h1(v-if="isLoading") Carregando...
 </template>
 
 <script>
@@ -13,6 +14,22 @@ export default {
   components: {
     SearchForm,
     UserCard
+  },
+  data() {
+    return {
+      user: {},
+      isLoading: false
+    }
+  },
+  computed: {
+    isUserLoaded() {
+      return Object.keys(this.user).length != 0;
+    }
+  },
+  methods: {
+    userData(hash) {
+      this.user = hash;
+    }
   }
 }
 </script>
