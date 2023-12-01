@@ -14,7 +14,8 @@ export default {
   props: {
     photo: {
       type: String,
-      required: true
+      required: true,
+      default: require('../assets/default_avatar.svg')
     },
     name: {
       type: String,

@@ -1,5 +1,6 @@
 <template lang="pug">
 div.app
+  img.header-image(src="./assets/github.svg")
   SearchForm(@userData="userData" @start="isLoading = true" @end="isLoading = false")
   UserCard(:photo="userPhoto" :name="userName")
   h1(v-if="isLoading") Carregando...
@@ -23,7 +24,7 @@ export default {
   },
   computed: {
     userPhoto() {
-      return this.user.avatar_url ? this.user.avatar_url : 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png';
+      return this.user.avatar_url ? this.user.avatar_url : undefined;
     },
 
     userName() {
@@ -43,5 +44,13 @@ html, body {
   background-color: #FFF;
   color: #000;
   font-family: sans-serif;
+}
+
+.header-image {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
