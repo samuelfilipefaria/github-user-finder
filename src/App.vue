@@ -1,6 +1,7 @@
 <template lang="pug">
 div.app
   img.header-image(src="./assets/github.svg")
+  h1.title GitHub User Finder
   SearchForm(@userData="userData" @start="isLoading = true" @end="isLoading = false")
   UserCard(:photo="userPhoto" :name="userName")
   h1(v-if="isLoading") Carregando...
@@ -40,10 +41,17 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 html, body {
   background-color: #FFF;
   color: #000;
   font-family: sans-serif;
+}
+
+.title {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
 }
 
 .header-image {
