@@ -1,7 +1,7 @@
 <template lang="pug">
 div.app
   SearchForm(@userData="userData" @start="isLoading = true" @end="isLoading = false")
-  UserCard(v-if="isUserLoaded" :photo="user.avatar_url" :name="user.name")
+  UserCard(:photo="userPhoto" :name="userName")
   h1(v-if="isLoading") Carregando...
 </template>
 
@@ -22,8 +22,12 @@ export default {
     }
   },
   computed: {
-    isUserLoaded() {
-      return Object.keys(this.user).length != 0;
+    userPhoto() {
+      return this.user.avatar_url ? this.user.avatar_url : 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png';
+    },
+
+    userName() {
+      return this.user.name ? this.user.name : "User name here";
     }
   },
   methods: {
