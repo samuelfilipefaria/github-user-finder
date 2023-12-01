@@ -2,9 +2,8 @@
 div.app
   img.header-image(src="./assets/github.svg")
   h1.title GitHub User Finder
-  SearchForm(@userData="userData" @start="isLoading = true" @end="isLoading = false")
+  SearchForm(@userData="userData")
   UserCard(:photo="userPhoto" :name="userName")
-  h1(v-if="isLoading") Carregando...
 </template>
 
 <script>
@@ -19,8 +18,7 @@ export default {
   },
   data() {
     return {
-      user: {},
-      isLoading: false
+      user: {}
     }
   },
   computed: {

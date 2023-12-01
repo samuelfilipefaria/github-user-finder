@@ -19,8 +19,6 @@ export default {
   },
   methods: {
     searchUser() {
-      this.$emit("start");
-
       const URL = "https://api.github.com/users/";
 
       fetch(URL + this.githubUsername, { method: "GET" }).then((response) => {
@@ -30,8 +28,6 @@ export default {
       }).catch((error) => {
         console.log("Deu erro -> " + error);
       })
-
-      this.$emit("end");
     }
   }
 }
