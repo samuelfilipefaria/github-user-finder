@@ -49,9 +49,10 @@ export default {
 .search-box-input, .search-box-button {
   background-color: #FFF;
   outline: none;
-  border: solid 3px #000;
-  border-radius: 0px;
+  border: solid 1.5px #252525;
+  border-radius: 10px;
   height: 30px;
+  padding: 5px;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   font-size: 20px;
@@ -59,7 +60,7 @@ export default {
 }
 
 .search-box-input {
-  color: #000;
+  color: #252525;
   width: 400px;
   padding-left: 10px;
   margin-right: 10px;
@@ -68,7 +69,7 @@ export default {
 .search-box-button {
   width: 30px;
   font-weight: bold;
-  color: #000;
+  color: #252525;
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;

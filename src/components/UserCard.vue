@@ -29,8 +29,8 @@ export default {
   height: 400px;
   width: 300px;
   margin-top: 50px;
-  border: solid 3px #000;
-  border-radius: 0px;
+  border: solid 1.5px #252525;
+  border-radius: 10px;
   font-size: 10px;
   text-align: center;
   box-shadow:
